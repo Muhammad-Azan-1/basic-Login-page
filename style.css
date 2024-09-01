@@ -1,0 +1,298 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , 'sans-serif';
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://images.pexels.com/photos/35796/amazing-beautiful-beauty-blue.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Correct usage */
+    background-repeat: no-repeat; /* Separate the repeat property */
+    background-size: cover; /* Adjust the size of the background image */
+    background-position: center; /* Optional: center the background image */
+}
+
+/* url('https://images.pexels.com/photos/7477/night-trees-stars.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo{
+    user-select: none;
+    font-size: 2rem;
+}
+
+.navigation a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    margin-right: 40px;
+    font-weight: 500;
+    font-size: 1.2rem;
+
+}
+
+.navigation a::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position:absolute;
+    left: 0;
+    bottom:-6px; 
+    transform: scaleX(0); 
+}
+
+.navigation a:hover::after{
+    transform: scaleX(1); 
+    transition:0.5s;
+}
+
+
+.navigation  .btn-login{
+    width: 110px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.5s;
+
+}
+
+.navigation  .btn-login:hover{
+    background: #fff;
+    color:#162938;
+}
+
+.wrapper{
+    margin-top: 80px;
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border:2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow:  0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    transform: scale(0);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.5s ease , height 0.2s ease;
+}
+
+.wrapper.login-button-active{
+
+    transform: scale(1);
+}
+
+.wrapper.active{
+    height: 520px;
+}
+
+
+.wrapper .close-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width:45px ;
+    height: 45px;
+    background-color: #162938;
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other elements */
+  
+}
+
+
+
+.wrapper .login-form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .login-form-box{
+    transform: translateX(0);
+    transition:  transform 0.18s ease;
+}
+
+    /* //when active class add */
+
+.wrapper.active .login-form-box{
+
+    transition: none;
+    transform: translateX(-400px);
+}
+
+
+.wrapper .Register-form-box{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .Register-form-box{
+    transform: translateX(0);
+    transition:  transform 0.18s ease;
+}
+
+.login-form-box h2{
+    color: #162938;
+    text-align: center;
+    font-size: 2rem;
+}
+.Register-form-box h2{
+    color: #162938;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+     margin: 30px 0;
+
+}
+
+.input-box label{
+ 
+    position:absolute; 
+    top:50%;
+    left: 5px;
+    transform: translateY(-50%); /* Centers the label vertically */
+    font-size: 1rem;
+    color: #162938;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s; /* Optional: for smooth label animations */
+}
+
+.input-box input:focus~label,
+.input-box input:valid ~label {
+    top: -5px;
+
+}
+
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #162938;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+    box-sizing: border-box; 
+
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    color: #162938;
+    font-size: 1.2rem;
+    line-height: 57px;
+}   
+
+
+.remember-forgot-box{
+    font-size: .9rem;
+    color: #162938;
+    font-weight: 500;
+    margin: -10px 0 20px;
+    display: flex;
+    justify-self: space-between;
+
+}
+
+
+.remember-forgot-box label {
+    margin-right: auto; /* Pushes the "Forgot password?" link to the right */
+}
+
+.remember-forgot-box a {
+    margin-left: 20px; /* Adjust this value as needed */
+}
+
+.remember-forgot-box label input {
+    color:#162938;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.remember-forgot-box a {
+    color: #162938;
+    text-decoration: none;
+    margin: 3px;
+
+}
+.remember-forgot-box a:hover{
+    text-decoration: underline;
+}
+
+
+.btn-submit{
+    width: 100%;
+    height: 45px;
+    background-color: #162938;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    
+}
+
+.register-login{
+
+    font-size: .9rem;
+    color: #162938;
+    font-weight: 500;
+    text-align: center;
+    margin: 25px 0 10px;
+
+}
+
+.register-login p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-login p a:hover{
+    text-decoration: underline;
+}
+
+
+
